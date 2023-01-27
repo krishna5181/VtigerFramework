@@ -7,10 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 public class CreateOrganizationTest 
 {
-	public static void main(String[] args) 
+	@Test
+	public void createOrgTest()
 	{
 		//Launch the browser
 		WebDriver driver = new ChromeDriver();
@@ -31,7 +33,7 @@ public class CreateOrganizationTest
 		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
 		
 		//Create Organization with mandatory fileds
-		driver.findElement(By.name("accountname")).sendKeys("TonyStarks");
+		driver.findElement(By.name("accountname")).sendKeys("TonyStarks145618");
 		
 		//Save the Organization
 		driver.findElement(By.name("button")).click();

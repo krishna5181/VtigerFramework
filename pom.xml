@@ -55,6 +55,13 @@
       <scope>test</scope>
 </dependency>
 
+<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.24</version>
+			<scope>provided</scope>
+</dependency>
+
 
 
   
@@ -80,6 +87,25 @@
   			</plugins>  		
   		</build>  	
   	</profile>
+  	
+  	<profile>
+  		<id>BatchExecution</id>
+  		<build>
+  			<plugins>
+  				<plugin>
+       	 <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M8</version>
+        <configuration>
+        <suiteXmlFiles>
+        <suiteXmlFile>testng_BatchExecution3.xml</suiteXmlFile>
+        </suiteXmlFiles>
+        </configuration>
+     			</plugin>
+  			</plugins>  		
+  		</build>  	
+  	</profile>
+  	
   </profiles>
   
 </project>

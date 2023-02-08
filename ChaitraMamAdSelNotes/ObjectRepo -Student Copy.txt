@@ -1,0 +1,122 @@
+ Object Repository/Element repository:
+-> Its a collection of web elements and their locators
+-> Automation rule says "do not hardcode the locators for identifying the web elements", 
+   hence all the locators are stored in a specific resource like excel sheet, 
+   properties file or pom class.
+-> It is developed using POM design pattern
+-> Object Repository is created in src/main/java
+
+Advantages of Object Repository:
+-> Re usability of web elements, No need to identify the same element multiple times.
+-> Will handle frequent UI changes, modification of locators will be easy
+-> Test script developemnt is faster
+-> Test script will be more optimised with business libraries
+-> More test script readability 
+-> Test script is more robust, It can easily handle the changes
+
+What is POM?
+-> POM-- Page Object Model:- Its a java design pattern preferred by google to develop
+                             Object repository
+Why POM? 
+-> POM is well structured design pattern, where we can maintain all the web elements 
+   page wise hence modification/ maintainace of the element becomes easy
+
+Rules of POM
+1. Create seperate java class for evry web page, And class name should be same as web page name
+2. Identify all the web elements using @FindBy, @FindAll, @FindBys and store it in a java class
+   (element declaration) and declare it as private.
+3. Create a constructor To initialise all the web elements, pageFactory.initElements(driver, this);
+   (element initialization)
+4. Provide getter methods To access these elements - encapsulation
+   (element Utilization)
+5. Provide re usable business libraraies to access these elements 
+
+How do acheive Encapsulation in your framework/Explain encapsulation wrt your framework?
+-> We create POM class to identify and store all the web elements as private, 
+   Once the web elements are initialised with the help of a constructor,
+   we provide getter methods to access these web elements. 
+   we ll not provide setters, hence the elements cannot be altered but can be only used. 
+   This is how all the web elements are encapsulated. 
+
+Difference between POM and PageFactory design pattern
+-> POM is a Java design pattern, where we will maintain all the web element locators 
+   in a organised manner
+-> PageFactory is an extended design pattern of POM which has a method called as initElements
+   which is used to initialise the web elements wrt driver when the object is created
+
+What is StaleElementReferenceException?
+-> Basically Its a selneium exception, when ever the web driver try to identify an element,
+   the element will be available in GUI, but at the time of execution/performing action, the 
+   element will not be recognised due to "page got refreshed" or "element reference may be old"
+   or "element is not longer attached to the DOM/page", in all these cases we get StaleElement
+   reference exception.
+
+How POM will Handle StaleElementReferenceException
+-> POM design pattern will not identify the elements with web driver reference, 
+   instead it uses @FindBy, @FindAll, or @FindBys to identify the elements
+   All the identified elements will get initialised with driver reference only after
+   creating the object. Hence updated driver reference is used to initialization.
+
+Difference @Findby, @FindAll, @FindBys
+-> @Findby, @FindAll, @FindBys are selenium annotation
+-> @FindBy(locator = "value")
+   @FindBy(name = "user_name")
+   @FindBy is used to identify one locator for one element.
+
+-> @FindAll({@FindBy(locator = "value"),@Findby(locator = "value")})
+   @FindAll({@FindBy(name = "user_name"),@Findby(xpath = "//input[@name='user_name']")})
+   @FindAll is used when one locator might not identify the element
+   @FindAll works like a OR operator (either this or that);
+   @FindAll is used for "Auto healing Process".
+   Auto healing process : - is a process where the if the element is not identified with one locator
+   @FindAll annotation by default it will check for another locator
+   -> during execution, if one locators fails to identify the particular element, @FindAll
+      annotation will retry to identify the same element with different locator
+
+-> @FindBys({@FindBy(locator = "value"),@Findby(locator = "value")})
+   @FindBys({@FindBy(name = "user_name"),@Findby(id = "user_name"))
+   @FindBys uses 2 locators to identify a single web element
+   @FindBys work like a AND operator (both should be true)
+
+Advantages of POM:
+-> Helps to maintain the object repository in a well organised manner
+-> perfect fit for Agile process to handle frequent UI changes.
+-> All the elements are stored page wise hence maintainace and modification is easy
+-> @FindAll supports Auto healing
+-> Buisness libraries helps test script optimisation
+-> POM achieve Encapsulation by making element as private and providing getters
+-> Since all  the web elements are stored in java classes, no external libraries are need
+   to read the data. 
+
+Disadvantages of POM:
+-> We cannot identify the dynamic elements with dynamic xpath using @FindBy, we have to use 
+   driver.findElements() only.
+
+
+Note: @FindBy, @FindAll, @FindBys - cannot handle dynamic xpath, 
+      For using Dynamic xpath , we have use driver.findElement() only.
+      Example for dynamic xpath
+      normal xpath to identify orgname - ch399
+      //a[text()='ch399']
+      if we want to dynamic choose any org name - OrgName
+      //a[text()='"+OrgName+"']
+      driver.findElement(By.xpath("//a[text()='"+orgName+"']"))
+      
+Scenario 6: end To End scenario
+
+--> Launch the browesr
+--> Login To App
+--> Navaigate to products
+--> Create A product with vendor 
+--> save and logout of app
+
+-> What is encapsulation? How POM achieves encapsulation?
+Encapsulation is hiding the data/ limiting access of a particular information
+In POM, all the web elements are stored as private web elements, and only getter 
+access is provide through which setter access is denied. which makes the web elements secure
+and no unnecessary changes in element locators are entertained.
+This is how encapsulation is acheived.
+
+-> Total number of POM Class  = Total number of web pages in the Application
+
+

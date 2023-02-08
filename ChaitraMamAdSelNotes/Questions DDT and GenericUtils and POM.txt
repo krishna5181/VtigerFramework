@@ -1,0 +1,42 @@
+Interview Questions on Data Driven Testing and Generic Libraries
+Data Driven Testing:
+1. What are the different types of data available in your Framework?
+2. What is property file and advantages
+3. How do you handle Test data?
+4. What are the different ways to achieve Data Driven Testing?
+5. Why Data driven Testing is needed?
+
+Generic Libraries:
+1. What is Generic Library? How is it related with framework?
+2. Write any 2 methods From Excel file library
+3. write An 2 re-usable Methods to Handle drop down
+4. write any 3 generic method to Handle Synchronization in your framework
+5. write  any 3 generic methods from Web driver Library
+6. Explain the advantages of using generic utilty component
+7. What are the classes and interfaces in generic Library.
+8. Write a geneeric method to handle switch to window action
+9. demonstrate Method overloading in generic library
+
+Scenario based
+1. One of web pages consists of 5 drop downs, How do handle it
+2. How do u handle synchronization in Selenium.
+3. Application demands huge amount of Test data, How do you handle it.
+
+Object Repository
+1. What is Object Repository? Why Object Repo?
+2. Why POM classes are prefered for Object repository?
+3. What is POM and write all the rules of POM?
+4. Difference between POM and PageFactory
+5. Difference between @findBy and driver.findElements()
+6. Explain @FindBy, @FindAll, @FindBys
+7. Develop POM Class for a login Page
+8. What is StaleElementReference Exception? How POM will handle it
+9. What is Auto healing?
+
+Scenario based
+1. Agile process demands frequent UI changes, How do u handle this situation
+2. Session Id for a page keeps on Changing when ever the page is refreshed, How do hanlde
+   This situation
+3. One of web pages consists of 5 drop downs, How do handle it
+4. How do u handle synchronization in Selenium.
+5. What are the total number of pom classes present in your framework.

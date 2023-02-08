@@ -1,0 +1,393 @@
+TestNG:
+Unit testing framework which supports java and .net
+TestNG = Junit + Nunit
+
+TestNG for developers:
+-> Developers will make use of TESTNG for Unit testing of the source code
+
+TestNG for Automation Testers:
+-> Automation Testers will make use of TESTNG for developing the test scripts
+   in a more optimised way.
+
+Annotations in TestNG:
+-> @Test
+-> @BeforeMethod
+-> @AfterMethod
+-> @BeforeClass
+-> @AfterClass
+-> @BeforeTest
+-> @AfterTest
+-> @BeforeSuite
+-> @AFterSuite
+-> @DataProvider
+-> @Listeners
+-> @Parameters
+
+@Test Annotation:
+-> Will drive the test script execution hence the framework is called TDD- test driven development
+-> All annotation method should have access specifier as public and return type as void
+-> @Test annotation acts like a main method which is identified by JVM to start the execution
+-> One class can consists of multiple @Test annotations
+-> Test class name and Test method name should end with TEST
+-> Test class name is usually module name
+-> Test method name is usually test case name with ID
+-> In a Test Class all the @Test will be execute in default execxution order - 
+-> default execution order of @Test is alphabetical/ ASCII value
+
+=> To change the execution order of @Test annotations inside a test class: priority in testNg
+@Test(priority = int)
+-> Lowest priority will execute first
+-> Default priority will be 0
+-> Negetive priorities are allowed
+
+=> To run the same test script/ @Test mutiple Times:invocation count in TestNG
+@Test(invocationCount = int)
+-> Default invocation count is 1
+-> If we want to run the same test script more than once then provide invocation count
+-> If invocation count is given 0 or negative values, Then that @Test will not be executed.
+
+we can give both invocation count and priority for the same test script
+@Test(invocationCount = 4, priority = 2) - priority is given first preference
+
+=> To make the execution of one test script depend on the status(pass/fail) of other test sript
+   - DependsOnMethods in TestNG
+     @Test(dependsOnMethods = "method name")
+   - if one test script should depend on execution status of multiple test scripts like
+     @Test(dependsOnMethods = {"method name 1","method name 2"})
+
+=> To disable a prticular test script/@Test : enabled in testNG
+@Test(enabled = false)
+-> Enabled is feature which accepts boolean(true/false)
+-> Default value for enabled is true,
+-> If you want to disable the test script execution give enabled = false.
+
+=> To execute the same test script with different set of data : Dataprovider
+-> when ever we have more amount of data to be added, and all the data correspond to
+   same test case, then we prefer @DataProvider
+-> @Dataprovider is the only annotation method whose return type is Object[][].
+-> First we have create/read Data using @DataProvider and then we have to load the data into 
+   the test script giving dataprovider as argument for @Test(dataprovider = "getData")
+
+--> Real Time examples for usage of @DataProvider concept:-
+1. Add products into the cart - scenario is adding the product to the cart but we ll have 
+                                Thousands of product to be added, here we have to execute
+                                this scenario as many times as we have products. hence
+                                data provider is a good option.
+2. Create Multiple Users at a Time - here create user is a scenario, if we want to create
+                                     multiple users, we have to use data provider so that
+                                     data is different scenario is same.
+---> @DataProvider:--Test scenario is same but data is different
+                     Total number of test runs = Total number of data used.
+
+Annotations in TestNG 
+
+=> Basic Configuration Annotations - ReturnType is void
+
+@Test:--- act like a main method, which is identified by JVM to start the execution
+
+@BeforeSuite: It is executed before the <suite> tag in the suite xml file
+              It is executed only once per execution as there will be only one <suite>
+              It is used for establishing database connection.
+
+@AfterSuite: It is executed after the closing of suite tag </suite> in suite xml file
+             It is executed only once per execution as there will be only one </suite>
+             It is used for closing database connection.
+
+@BeforeTest: It is executed before the opening of <Test> in suite xml file
+             The number of times it will execute depends on number <Test> tags
+             This is mostly used for parallel executions as it create multiple threads
+
+@AfterTest: It is executed after the closing of test tag </Test> in suite xml file
+            The number of times it will execute depends on number </Test> tags
+            This is mostly used for parallel executions as it create multiple threads            
+
+@BeforeClass: It will execute before opening of every class <class> in suite xml file
+              or simply we can tell before evry test class
+              The number of times it will execute depends on the number of <Class> or Test class
+              It is used for launching browser              
+
+@AfterClass: It will execute after closing of every class </Class> in suite xml file
+             or simply we can tell after evry test class
+             The number of times it will execute depends on the number of </Class> or Test class
+             It is used for closing browser
+
+@BeforeMethod: It will execute before every @Test annotation
+               The number of times it will execute depends on number of @Test
+               It is used for login to Application
+
+@AfterMethod: It will execute after every @Test annotation
+              The number od times it will execute depends on number of @Test
+              It is used for logout of Application
+
+BaseClass: It consists of all basic configuration annotations with specfic functionality
+-> Base class is designed in Generic library Package of src/main/java
+-> there will be only one base class for a project
+-> All the test scripts should extend from base class to inherit the functionalities 
+   written inside the base class
+-> Automation rule says "all test script should extend from base class"
+-> Base class will be usually designed by framework developer
+-> Once after the generic Libraries are configured, Object repository 
+   designed later base class is configured.
+-> once both generic Utility and Object Repo are ready, Framework design is completed
+-> This framework will be shared amongst all the automation engineers in the team, 
+   and they will start contributing the test script with the help of Framework.
+-> Single base class acts as a parent and all the test scripts act as individual childs
+   Hence base class follows "heirarchical Inheritance" -> Inheritance real time example.
+
+Explain inheritance with respect to your framework:
+-> We use inheritance in Base class which follows heirarchical Inheritance where base class
+   contains all the basic configuration annotations will act as a parent class and all the 
+   test script should extend from Base class to utilise the functionalities given in 
+   base class.
+
+Advantages of BaseClass:
+1. Code re usability
+2. Test script is optimsed
+3. No need to invest time on unwanted actions
+4. Test script development is faster
+5. Code maintenance and modification is easy
+6. Debugging process is easy
+
+TestNG Executions 
+ -> Execution:-- Once the test scripts are developed, they have to be executed to check 
+                 the correctness of the code - running the program.
+ -> Validation:-- Wheather the result is as expected or not
+
+NOTE: For every new feature/build, we will execute the recent Framework to check the regression issues
+
+=> Batch Execution: 
+-> Executing all the existing test script sequentially/one after another
+-> Batch execution is also called as FULL REGRESSION testing.
+-> All the test scripts are loaded inside one suite xml file
+-> In one suite xml file / testNg.xml file we can invoke any number of classes 
+   but all the classes should be present inside the project.
+-> All the class names should be provided as qualified class name
+   packageName.Classname
+   <class name="vtiger.ContactsTests.CreateContactWithOrgTest"/>
+-> Batch execution is preferred to perform full regression testing that is 
+   when we cannot identify the impacted areas, or all the areas impacted, Batch 
+   Execution is preffered.
+
+=> Group Execution:
+-> Executing the similar kind of test script under a group.
+   ex: smokeSuite, RegressionSuite
+-> All type test script belong either to smoke suite or to Regression suite
+-> To achieve group execution, Every @Test should be included in the group
+   @Test(groups = "RegressionSuite")
+   @Test(groups = {"SmokeSuite","RegressionSuite"})
+
+=> Parallel executions
+   Parallel execution means multiple threads start the execution simultatneously.
+-> Distributed Parallel execution
+-> Cross Browser Parallel Execution
+-> Cross Platform Parallel Execution
+
+-> Distributed Parallel execution: 
+   -> We prefer distributed paralle execution when we have to reduce the total 
+      execution time taken by a suite.
+   -> We distribute the total number of existing test scripts amoung multiple threads in 
+      Suite xml file with <test> and start the execution.
+   -> Browser will not be changed here. Only the test scripts are distributed.
+   -> Different threads - Different test scripts - Same browser lauched in all threads. 
+   -> One thread can have any number of test classes and all the test class inside the <test>
+      and </test> will be executed Sequentially
+
+-> Cross Browser Execution/Compability Testing:
+   - Cross browser execution means executing the same set of test scripts in multiple browsers
+     to ensure they are compatible.
+   - In cross browser execution, same set of test scripts are executed over different browsers
+     in different threads.
+   - Different Threads - Different Browsers - same set of Test scripts.
+   - Since during run time we have to choose the browser for execution, we have provide browser
+     name from suite xml file instead of property file.
+   - <Parameter> is used to set the name and value which vll pass this data to @Parameters
+     annotation in base class.
+
+-> How do you read data from suite xml file to your test script?
+   How do achieve data driven testing with suite xml file?
+   - we have to use <parameter> in suite xml file and provide name and value
+     <parameter name="BROWSER" value="Firefox"></parameter>
+   - That data we have to capture in tset script/Base Class using @Parameters annotation
+     @Parameters("BROWSER")
+
+=> Assertions 
+-> Automation rule says Validation is manadatory for every test script.
+-> Validations are very imp part of test script development which is completely depended 
+   on individual automation engg.
+-> Every test script should be validated for the correctness of result based on expected and 
+   actual result.
+-> Java If-Else blocks are not recommended for valiadation of test script as if-else block 
+   do not have the capability to fail the test script.
+-> Depending on if condition - if true - if block will be executed
+                             - if false - else block will be executed.
+   So no failure will occur and since in any case either If or Else is getting executed, further lines
+   in the test script will be executed. Hence this validation is not recommended.
+
+-> Assertions is a feature of TestNG which helps in validation. if expected result doesnot
+   match with actual result, Assertions will give AssertionError Exception and fail the 
+   test script providing the line no of the failure.
+
+- Hard Assert:
+  - Class name is Assert.
+  - All the methods present here are static methods hence accessed via Class name.
+  - Assert.assertTrue();
+    Assert.assertFalse();
+    Assert.assertEquals();
+    Assert.assertNotEquals();
+    Assert.assertNull();
+    Assert.assertNotNull();
+    Assert.fail(); -- These are the few methods present in Assert Class.
+  - Hard assert will stop the execution of further lines if the assertion is failed.
+  - When ever hard assert test script fail, hard assert will generate AssertionError 
+    Exeception along with line number of failure and error message and it will stop 
+    the current test script execution and continue other test scripts in the same test class.
+  - Whole test script gets failed if one hard assert is failed.
+  - Hence Hard assert is used to validate mandatory fields in the test script.
+
+- Soft Assert:
+  - Class name is SoftAssert.
+  - All the methods present here are non static methods hence accessed by creating object.
+  - SoftAssert sa = new SoftAssert();
+    sa.assertTrue();
+    sa.assertFalse();
+    sa.assertEquals();
+    sa.assertNotEquals();
+    sa.assertNull();
+    sa.assertNotNull();
+    sa.fail(); 
+    sa.assertAll();-- These are the few methods present in SoftAssert Class.
+  - Soft assert will not stop the execution of further lines if the assertion is failed.
+  - When ever soft assert test script fail, soft assert will generate AssertionError 
+    Exeception along with line number of failure and error message and it will continue 
+    the current test script execution.
+  - assertAll() is a special method which will sum up the status of all soft asserts used
+    in the entire test script and provide it in console at the end.
+  - if assertAll() is not used at the end of all soft assert statements, no failures will 
+    be logged.
+  - Hence Soft assert is used to validate non mandatory fields in the test script.
+
+
+=> Interfaces in TestNG:
+-> ITestListener :
+   - It is an inbuilt interface available in TestNG
+   - ITestListener has abstract methods which will capture all the run time events of a test
+     script like Pass, fail, Skip 
+   - As per the rule Listner Implementation class should implements ITestListner Interface 
+     and should override all the abstract methods present.
+   - Some of the imp abstract methods are:
+     - onStart() - Start of current suite execution
+     - onFinish() - end of current suite execution
+     - onTestStart() - start of current test script execution (@Test)
+     - onTestSucecss() - current test script execution is passed (@Test)
+     - onTestFailure() - current test script execution is failed (@Test)
+     - onTestSkipped() - current test script execution is skipped (@Test)
+   - ListenerImplementation is a class created in GenericUtility package of src/main/java
+     is used to receive the event status from @Listener annotations present in every 
+     testscript file and then perform appropriate action based on result (pass and fail)
+   - In Framework, as listeners will monitor the test script execution, we configure the
+     extent Reports using listeners.
+   - onTestFailure() is implemented to take the screenshot when evr the test script is 
+     getting failed.
+
+-> ITestResult:
+   - It is an interface available in TestNG and it is used as an argument for every abstarct
+     method in Listener implementation class which will capture the pass/fail status of the 
+     current test script during run time.
+
+-> IRetryAnalyser
+   - Its an interface present in TestNG, which will help us re run the failed test script
+   - Sometimes failures can be due to synchronization issues, network issues, server issues
+     or any miscellaneous issues. and if we run the script for 3 or 4 times the test script 
+     might pass. 
+   - For these kind of situation we will manually analyse it, make sure there is no script issue 
+     or its not a bug, then we try to rerun for couple of times, if passed only then for the
+     next execution we will implement retry anaylser
+   - Provide an implementation class for IRetryAnalyser interface in GenericUtility package
+     and implement the retry() 
+   - To use retry analyser in test script
+
+Questions:
+1. Should we provide listeners to every class?
+=> Yes. we have to provide listeners for every class because each class should be monitored
+   - @Listeners(vtiger.GenericUtility.ListenerImplementation.class)
+   Listeners can be given at Suite xml file also
+   <listeners>
+     <listener class-name="vtiger.GenericUtility.ListenerImplementation"></listener>
+   </listeners>
+
+2. Should we provide retry analyser for every @Test?
+=> No. we have to first analyse the failed test scripts, if we found they are passed after 
+   couple runs, we should decide retry count and only for those test scripts we will implement
+   retry analyser
+   - @Test(retryAnalyzer = vtiger.GenericUtility.RetryAnalyserImplementation.class)
+
+3. Why Listeners?
+=> - Listeners is a feature in TestNG used to monitor the run time every of a test script.
+     and based on the events, we can perform necessary actions with abstract methods of 
+     ITestListerner interface.
+   - We can capture run time events
+   - we can configure extent reports
+   - It provides inbuilt methods to log the status of test script
+
+4. Why We have take screenshots?
+=> - Screen shots act as a proof to the developer for rising the defect/bug
+   - Debugging becomes easy with screenshot
+   - It can be shared across with developer and other tester for easy communication
+     of the issue
+
+5. Out of 1000 test script, 200 test scripts got failed. How do you re run only the failed
+   test scripts.
+=> In Project -> test Output folder -> testng-failed.xml 
+   This suite xml file will consists of failed test scripts in the current execution and it 
+   is auto updated. if we run this suite xml file, all the failed script in current execution
+   wil run.
+
+6. Out of 1000 test script, 200 test scripts got failed. What is your approach?
+=> - First check the execution report
+   - re run the failed test scripts to analyse the issue like wat is the exception line no
+   - put break point and run the individual test script in debug mode
+   - if it is a test script issue - correct it and update the framework
+   - if it is a product issue - rise it as a bug.
+
+
+=> Reports: 
+   - Reports are a very important part of Framework because they act like proof for all the execution
+     done by automation tester.
+   - Customers usually ask for execution report
+   - Reports have to be provided for Developers also
+   - Usually after every execution reports will be sent to high offs like product Owner,
+     Automation Leads, Technical consultants and customers.
+   
+-> There are two types of reports:
+   - High Level Reports: TestNG suuports HTML report which provides basic information like
+                         Total number of test scripts executed
+                         Number of test scripts Passed/failed/Skipped
+                         reason for the failure.
+   - Low Level Reports: These specify the log level analysis
+                        in TestNg we have "Reporter.log();"
+                       
+-> Different log levels: 
+   - INFO - which will give information
+   - WARNING - warning
+   - ERROR - issue
+   - FATAL - issue
+
+-> Disadvantages of HTML reports in TestNG:
+   - No Pie Chart reporesenttation
+   - Non customisable
+   - Cannot attach screenshots
+   - Very simple reporting format.
+   - In order to over come these, we use EXTENT REPORTS or ALLURE REPORTS
+
+=> Extent Reports:
+   - It a popular reporting format used in several companies as it given graphical 
+     representation of high level report
+   - IT has 3 major classes
+     - ExtentSparkReporter -> Used to set the basic configuration for the report
+     - ExtentReports -> its a main class which will set system information to the report
+     - ExtentTest -> This class will perform test script level analysis.
+   - Extent reports can be configured in BaseClass or ListenerImplementation class of 
+     genericUtility package in framework. most prefered is ListenerImplementation Class
+     as it monitors the execution.
+   - flush() should be mandatorily used at the end which will consolidate all test execution
+     status and generate the report. 

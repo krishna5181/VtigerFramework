@@ -27,6 +27,8 @@ public class BaseClass
 	public WebDriverUtility wUtil = new WebDriverUtility();
 	public PropertyFileUtility pUtil = new PropertyFileUtility();
 	public ExcelFileUtility eUtil = new ExcelFileUtility();
+	
+	
 	public WebDriver driver = null;
 	
 	@BeforeSuite
@@ -35,24 +37,24 @@ public class BaseClass
 		System.out.println("====== DataBase Connection successfull =====");
 	}
 	
-	//@Parameters("browser")  //for CrossBrowser execution, and comment the readDataFromProperty bcz we are reading the property from property file 
+	@Parameters("browser")  //for CrossBrowser execution, and comment the readDataFromProperty bcz we are reading the property from property file 
 	@BeforeClass
-	public void bcConfig(/*String Browser*/) throws IOException
+	public void bcConfig(String Browser) throws IOException
 	{
-		String Browser = pUtil.readDataFromPropertyFile("browser");
+		String browser = pUtil.readDataFromPropertyFile("browser");
 		String URL = pUtil.readDataFromPropertyFile("url");
 		
-		if(Browser.equalsIgnoreCase("chrome"))
+		if(browser.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-			System.out.println(Browser+" launch successful");
+			System.out.println(browser+" launch successful");
 		}
-		else if(Browser.equalsIgnoreCase("firefox"))
+		else if(browser.equalsIgnoreCase("firefox"))
 		{
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-			System.out.println(Browser+" launch successful");
+			System.out.println(browser+" launch successful");
 		}
 		else
 		{

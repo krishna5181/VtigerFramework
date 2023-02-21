@@ -5,20 +5,22 @@ import java.util.Random;
 
 public class JavaUtility 
 {
-	public int getrandomNumber() {
+	public int getrandomNumber() 
+	{
 		Random ran = new Random();
 		int value = ran.nextInt(1000);
 		return value;
 	}
 	
-	public String getSystemdate() {
+	public String getSystemdate() 
+	{
 		Date d = new Date();
 		 String value = d.toString();
 		return value;	
 	}
 	
-	public String getSystemDateInFormat() {
-		
+	public String getSystemDateInFormat() 
+	{
 		Date d = new Date();
 		 String[] dArr = d.toString().split(" ");
 		  String date = dArr[2];

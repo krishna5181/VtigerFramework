@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ContactsInfoPage 
 {
-	// declaration
+		// declaration
 		@FindBy(xpath = "//span[@class='dvHeaderText']")
 		private WebElement ContactHeaderText;
 

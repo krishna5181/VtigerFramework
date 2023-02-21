@@ -5,10 +5,10 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import vTiger.GenericUtlities.BaseClass;
-import vTiger.GenericUtlities.CreateNewOrganizationPage;
 import vTiger.ObjectRepository.ContactsInfoPage;
 import vTiger.ObjectRepository.ContactsPage;
 import vTiger.ObjectRepository.CreateNewContactsPage;
+import vTiger.ObjectRepository.CreateNewOrganizationPage;
 import vTiger.ObjectRepository.HomePage;
 import vTiger.ObjectRepository.OrganizationInfoPage;
 import vTiger.ObjectRepository.OrganizationPage;

@@ -37,9 +37,9 @@ public class BaseClass
 		System.out.println("====== DataBase Connection successfull =====");
 	}
 	
-	@Parameters("browser")  //for CrossBrowser execution, and comment the readDataFromProperty bcz we are reading the property from property file 
+//	@Parameters("browser")  //for CrossBrowser execution, and comment the readDataFromProperty bcz we are reading the property from property file 
 	@BeforeClass
-	public void bcConfig(String Browser) throws IOException
+	public void bcConfig(/*String Browser*/) throws IOException
 	{
 		String browser = pUtil.readDataFromPropertyFile("browser");
 		String URL = pUtil.readDataFromPropertyFile("url");
@@ -88,5 +88,6 @@ public class BaseClass
 	public void asConfig()
 	{
 		System.out.println("==== DataBase connection closed =====");
+		driver.close();
 	}
 }

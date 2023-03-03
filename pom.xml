@@ -20,6 +20,7 @@
     
 </dependency>
 
+<!-- for handling excel spread sheets we need apache poi dependency. its a third party tool to handle the excel sheet-->
 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 <dependency>
     <groupId>org.apache.poi</groupId>
@@ -27,6 +28,7 @@
     <version>4.1.2</version>
 </dependency>
 
+<!-- apache poi ooxml is child tool of apache poi dependency -->
 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 <dependency>
     <groupId>org.apache.poi</groupId>
@@ -34,6 +36,7 @@
     <version>4.1.2</version>
 </dependency>
 
+<!-- Automated driver management and other helper features for Selenium WebDriver in Java -->
 <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
@@ -41,6 +44,7 @@
     <version>3.8.1</version>
 </dependency>
 
+<!-- The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more.-->
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
@@ -54,12 +58,16 @@
       <version>6.9.8</version>
 </dependency>
 
+
+<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<!-- -->
 <dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
-			<scope>provided</scope>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+    <scope>provided</scope>
 </dependency>
+
 
 <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 <dependency>
@@ -119,8 +127,7 @@
   		<id>smokesuite</id>
 			<build>
 				<plugins>
-					<plugin>
-						
+					<plugin>	
 		<groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M8</version>
@@ -128,12 +135,49 @@
         <suiteXmlFiles>
         <suiteXmlFile>Smoke.xml</suiteXmlFile>
         </suiteXmlFiles>
-        </configuration>
-						
+        </configuration>	
 					</plugin>
 				</plugins>
 			</build>  	
   	</profile>
+  	
+  	<profile>
+  		<id>demo123</id>
+  		<build>
+  			<plugins>
+     		 <plugin>
+       			 <groupId>org.apache.maven.plugins</groupId>
+       			 <artifactId>maven-surefire-plugin</artifactId>
+    		     <version>3.0.0-M9</version>
+                 <configuration>
+                 <suiteXmlFiles>
+                 <suiteXmlFile>DemoTest.xml</suiteXmlFile>
+                 </suiteXmlFiles>
+                 </configuration>
+            </plugin>
+	      </plugins>
+  	   </build>
+  	</profile>
+  	
+  	<profile>
+  		<id>Read</id>
+  		<build>
+  			<plugins>
+     		 <plugin>
+       			 <groupId>org.apache.maven.plugins</groupId>
+       			 <artifactId>maven-surefire-plugin</artifactId>
+    		     <version>3.0.0-M9</version>
+                 <configuration>
+                 <suiteXmlFiles>
+                 <suiteXmlFile>testngRead.xml</suiteXmlFile>
+                 </suiteXmlFiles>
+                 </configuration>
+            </plugin>
+	      </plugins>
+  	   </build>
+  	</profile>
+  	
+  	
   	
   </profiles>
   

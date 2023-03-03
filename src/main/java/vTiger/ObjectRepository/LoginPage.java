@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 	//Rule2: Class name should be Title of the webpage and ending with page
 public class LoginPage 
 {
-	//Rule3: Identify the webElements by using @FindBy, @FindAll and @FindBys annotations
+	//Rule3: Identify the webElements by using @FindBy, @FindAll and @FindBys selenium annotations
 	@FindBy(name="user_name")
 	private WebElement UserNameEdit;
 	

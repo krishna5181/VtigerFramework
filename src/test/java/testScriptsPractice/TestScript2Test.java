@@ -26,9 +26,5 @@ public class TestScript2Test extends BaseClass
 	{
 		System.out.println("Demo4");
 	}
-	@Test
-	public void LFB()
-	{
-		driver.get("www.google.com");
-	}
+	
 }

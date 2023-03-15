@@ -2,7 +2,9 @@ package testScriptsPractice;
 
 import org.testng.annotations.Test;
 
-public class TestScript3Test 
+import vTiger.GenericUtlities.BaseClass;
+
+public class TestScript3Test extends BaseClass
 {
 	@Test
 	public void Run1()

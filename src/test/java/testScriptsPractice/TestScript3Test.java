@@ -2,7 +2,7 @@ package testScriptsPractice;
 
 import org.testng.annotations.Test;
 
-public class TestScript3 
+public class TestScript3Test 
 {
 	@Test
 	public void Run1()

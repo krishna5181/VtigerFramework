@@ -177,8 +177,62 @@
   	   </build>
   	</profile>
   	
+  	<profile>
+  		<id>Pipe</id>
+  		<build>
+  			<plugins>
+     		 <plugin>
+       			 <groupId>org.apache.maven.plugins</groupId>
+       			 <artifactId>maven-surefire-plugin</artifactId>
+    		     <version>3.0.0-M9</version>
+                 <configuration>
+                 <suiteXmlFiles>
+                 <suiteXmlFile>testng_Suit1.xml</suiteXmlFile>
+                 </suiteXmlFiles>
+                 </configuration>
+            </plugin>
+	      </plugins>
+  		</build>
+  	</profile>
+  	
+  	<profile>
+  		<id>Pipe1</id>
+  		<build>
+  			<plugins>
+     		 <plugin>
+       			 <groupId>org.apache.maven.plugins</groupId>
+       			 <artifactId>maven-surefire-plugin</artifactId>
+    		     <version>3.0.0-M9</version>
+                 <configuration>
+                 <suiteXmlFiles>
+                 <suiteXmlFile>testng_Suite2.xml</suiteXmlFile>
+                 </suiteXmlFiles>
+                 </configuration>
+            </plugin>
+	      </plugins>
+  		</build>
+  	</profile>
+  	
+  	<profile>
+  		<id>Pipe2</id>
+  		<build>
+  			<plugins>
+     		 <plugin>
+       			 <groupId>org.apache.maven.plugins</groupId>
+       			 <artifactId>maven-surefire-plugin</artifactId>
+    		     <version>3.0.0-M9</version>
+                 <configuration>
+                 <suiteXmlFiles>
+                 <suiteXmlFile>testng_Suite3.xml</suiteXmlFile>
+                 </suiteXmlFiles>
+                 </configuration>
+            </plugin>
+	      </plugins>
+  		</build>
+  	</profile>
   	
   	
+
   </profiles>
   
 </project>

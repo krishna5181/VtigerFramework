@@ -31,20 +31,20 @@ public class BaseClass
 	
 	public WebDriver driver = null;
 	
-	@BeforeSuite
+	@BeforeSuite(groups = {"SmokeSuite","RegressionSuite"})
 	public void bsConfig()
 	{
 		System.out.println("====== DataBase Connection successfull =====");
 	}
 	
 //	@Parameters("browser")  //for CrossBrowser execution, and comment the readDataFromProperty bcz we are reading the property from property file 
-	@BeforeClass
+	@BeforeClass(groups = {"SmokeSuite","RegressionSuite"})
 	public void bcConfig(/*String Browser*/) throws IOException
 	{
 		String browser = pUtil.readDataFromPropertyFile("browser");
 		String URL = pUtil.readDataFromPropertyFile("url");
 		
-		if(browser.equalsIgnoreCase("chrome"))
+		if(browser.equalsIgnoreCase("Chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -66,25 +66,25 @@ public class BaseClass
 		driver.get(URL);	
 	}
 	
-	@BeforeMethod
+	@BeforeMethod (groups = {"SmokeSuite","RegressionSuite"})
 	public void bmConfig() throws IOException
 	{
 		String USERNAME = pUtil.readDataFromPropertyFile("username");
 		String PASSWORD = pUtil.readDataFromPropertyFile("password");
 		LoginPage lp = new LoginPage(driver);
 		lp.loginToApp(USERNAME, PASSWORD);
-		System.out.println(" Login to application successful");	
+		System.out.println("Login to application successful");	
 	}
 	
-	@AfterMethod
+	@AfterMethod (groups = {"SmokeSuite","RegressionSuite"})
 	public void amConfig()
 	{
 		HomePage hp = new HomePage(driver);
 		hp.logOutOfApp(driver);
-		System.out.println(" Logout successful");
+		System.out.println("Logout successful");
 	}
 	
-	@AfterSuite
+	@AfterSuite (groups = {"SmokeSuite","RegressionSuite"})
 	public void asConfig()
 	{
 		System.out.println("==== DataBase connection closed =====");

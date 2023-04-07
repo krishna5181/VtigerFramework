@@ -13,4 +13,11 @@
       <class name="testScriptsPractice.TestScript1Test"/>
     </classes>
   </test> <!-- Test -->
+  
+  <test thread-count="5" parallel="tests" name="Test_PE3">
+    <classes>
+      <class name="testScriptsPractice.TestScript3Test"/>
+    </classes>
+    
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

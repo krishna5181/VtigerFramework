@@ -30,6 +30,7 @@ public class BaseClass
 	
 	
 	public WebDriver driver = null;
+	public static WebDriver sdriver;
 	
 	@BeforeSuite(groups = {"SmokeSuite","RegressionSuite"})
 	public void bsConfig()
@@ -49,12 +50,14 @@ public class BaseClass
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			System.out.println(browser+" launch successful");
+			sdriver = driver; //This is used for takesScreenShot in listners
 		}
 		else if(browser.equalsIgnoreCase("firefox"))
 		{
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			System.out.println(browser+" launch successful");
+			sdriver = driver; //This is used for takesScreenShot in listners
 		}
 		else
 		{

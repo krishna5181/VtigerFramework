@@ -1,8 +1,10 @@
 package testScriptsPractice;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import vTiger.GenericUtlities.BaseClass;
+@Listeners(vTiger.GenericUtlities.ListenersImplementationClass.class)
 
 public class TestScript1Test  extends BaseClass
 {

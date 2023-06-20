@@ -10,8 +10,7 @@ import vTiger.GenericUtlities.WebDriverUtility;
 public class HomePage extends WebDriverUtility
 {
 	//Declarartion
-	@FindBy(className = "tabUnSelected")
-	private WebElement HomeBtn;
+	@FindBy(className = "tabUnSelected") private WebElement HomeBtn;
 	
 	@FindBy(linkText = "Calendar")
 	private WebElement CalendarLnk;

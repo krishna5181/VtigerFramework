@@ -20,6 +20,27 @@ public class ListenersImplementationClass implements ITestListener {
 	ExtentReports reports;
 	ExtentTest test;
 
+	
+	public void onStart(ITestContext context) {
+		// TODO Auto-generated method stub
+		System.out.println("----Suite Execution started-------");
+		
+		//Basic config for Extent Reports
+		ExtentSparkReporter htmlReport=new ExtentSparkReporter(".\\ExtentReports\\Report-"+new JavaUtility().getSystemDateInFormat()+".html");
+		htmlReport.config().setDocumentTitle("Vtiger Execution Reports");
+		htmlReport.config().setReportName("Vtiger Execution Report");
+		htmlReport.config().setTheme(Theme.DARK);
+		
+		
+		//Actual Report for system info in Extent Rports
+		reports = new ExtentReports();
+		reports.attachReporter(htmlReport);
+		reports.setSystemInfo("Base Url","http://localhost:8888");
+		reports.setSystemInfo("Base Browser","Chrome");
+		reports.setSystemInfo("Base platform", "windows");
+		reports.setSystemInfo("ReporterName", "Krishna M");
+	
+	}
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		String methodName = result.getMethod().getMethodName();
@@ -78,26 +99,6 @@ public class ListenersImplementationClass implements ITestListener {
 
 	public void onTestFailedWithTimeout(ITestResult result) {
 		// TODO Auto-generated method stub
-	}
-
-	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
-		System.out.println("----Suite Execution started-------");
-		
-		//Basic config for Extent Reports
-		ExtentSparkReporter htmlReport=new ExtentSparkReporter(".\\ExtentReports\\Report-"+new JavaUtility().getSystemDateInFormat()+".html");
-		htmlReport.config().setDocumentTitle("Vtiger Execution Reports");
-		htmlReport.config().setReportName("Vtiger Execution Report");
-		htmlReport.config().setTheme(Theme.DARK);
-		
-		//Actual Report for system info in Extent Rports
-		reports = new ExtentReports();
-		reports.attachReporter(htmlReport);
-		reports.setSystemInfo("Base Url","http://localhost:8888");
-		reports.setSystemInfo("Base Browser","Chrome");
-		reports.setSystemInfo("Base platform", "windows");
-		reports.setSystemInfo("ReporterName", "Krishna M");
-	
 	}
 
 	public void onFinish(ITestContext context) 

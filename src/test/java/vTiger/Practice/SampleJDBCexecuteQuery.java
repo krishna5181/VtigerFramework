@@ -20,7 +20,7 @@ public class SampleJDBCexecuteQuery
 		//Step1: Register the driver
 		DriverManager.registerDriver(driverRef);
 		
-		//Step2: get the connection with drive ---->database
+		//Step2: get the connection with drive ---->database name
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/wcsm23db", "root", "msn@5181");
 		
 		//Step3: Issue the create statement
@@ -31,7 +31,7 @@ public class SampleJDBCexecuteQuery
 		
 		while(result.next())
 		{
-			System.out.println(result.getString(1)+" "+result.getInt(2)+" "+result.getString(0));
+			System.out.println(result.getString(1)+" "+result.getInt(2)+" "+result.getString(3));
 		}
 		
 		//Step5: Close the database

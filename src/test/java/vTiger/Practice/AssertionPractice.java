@@ -11,7 +11,7 @@ public class AssertionPractice
 	{
 		System.out.println("stepA");
 		System.out.println("stepB");
-		Assert.assertEquals(true, true);
+		Assert.assertEquals(false, false);
 		Assert.assertTrue(true);
 		System.out.println("stepC");
 		System.out.println("stepD");

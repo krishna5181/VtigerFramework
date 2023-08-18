@@ -20,39 +20,39 @@
 	    <version>4.8.3</version> 
 	</dependency>
 
-	<!-- for handling excel spread sheets we need apache poi dependency. its a third party tool to handle the excel sheet-->
-	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<!-- for handling excel spread sheets we need apache poi dependency. its a third party tool to handle the excel sheet-->
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 	<dependency>
 	    <groupId>org.apache.poi</groupId>
 	    <artifactId>poi</artifactId>
 	    <version>4.1.2</version>
 	</dependency>
 
-	<!-- apache poi ooxml is child tool of apache poi dependency -->
-	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<!-- apache poi ooxml is child tool of apache poi dependency -->
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 	<dependency>
 	    <groupId>org.apache.poi</groupId>
 	    <artifactId>poi-ooxml</artifactId>
 	    <version>4.1.2</version>
 	</dependency>
 	
-	<!-- Automated driver management and other helper features for Selenium WebDriver in Java -->
-	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<!-- Automated driver management and other helper features for Selenium WebDriver in Java -->
+		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 	<dependency>
 	    <groupId>io.github.bonigarcia</groupId>
 	    <artifactId>webdrivermanager</artifactId>
 	    <version>3.8.1</version>
 	</dependency>
 
-	<!-- The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more.-->
-	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<!-- The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more.-->
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 	<dependency>
 	    <groupId>commons-io</groupId>
 	    <artifactId>commons-io</artifactId>
 	    <version>2.11.0</version>
 	</dependency>
 	
-	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 	<dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
@@ -61,7 +61,7 @@
 	</dependency>
 
 	
-	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 	<dependency>
 	    <groupId>org.projectlombok</groupId>
 	    <artifactId>lombok</artifactId>
@@ -70,7 +70,7 @@
 	</dependency>
 	
 	
-	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
@@ -78,9 +78,9 @@
 	</dependency>
 	
 	
-	<!-- This is for Extent Reports-->
-	
-	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<!-- This is for Extent Reports-->
+		
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 	<dependency>
 	    <groupId>com.aventstack</groupId>
 	    <artifactId>extentreports</artifactId>

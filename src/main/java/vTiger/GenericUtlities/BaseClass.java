@@ -74,6 +74,7 @@ public class BaseClass
 	{
 		String USERNAME = pUtil.readDataFromPropertyFile("username");
 		String PASSWORD = pUtil.readDataFromPropertyFile("password");
+		
 		LoginPage lp = new LoginPage(driver);
 		lp.loginToApp(USERNAME, PASSWORD);
 		System.out.println("Login to application successful");	

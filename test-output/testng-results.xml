@@ -1,83 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-02T01:05:52 IST" name="Default suite" finished-at="2023-06-02T01:06:18 IST" duration-ms="25697">
+  <suite started-at="2023-08-01T19:59:07 IST" name="Suite" finished-at="2023-08-01T20:00:55 IST" duration-ms="108393">
     <groups>
     </groups>
-    <test started-at="2023-06-02T01:05:52 IST" name="Default test" finished-at="2023-06-02T01:06:18 IST" duration-ms="25697">
-      <class name="vTiger.Practice.YatraTckBook">
-        <test-method signature="book()[pri:0, instance:vTiger.Practice.YatraTckBook@4d0f2471]" started-at="2023-06-02T01:05:52 IST" name="book" finished-at="2023-06-02T01:06:18 IST" duration-ms="25648" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":".ic_circularclose_grey"}
-  (Session info: chrome=113.0.5672.127)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [95768e923608f0723f13dfaf15d09b28, findElement {using=class name, value=ic_circularclose_grey}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\balar\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54280}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54280/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95768e923608f0723f13dfaf15d09b28]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".ic_circularclose_grey"}
-  (Session info: chrome=113.0.5672.127)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [95768e923608f0723f13dfaf15d09b28, findElement {using=class name, value=ic_circularclose_grey}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\balar\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54280}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54280/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 95768e923608f0723f13dfaf15d09b28
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at vTiger.Practice.YatraTckBook.book(YatraTckBook.java:27)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+    <test started-at="2023-08-01T19:59:07 IST" name="Test-Runner-Firefox" finished-at="2023-08-01T20:00:55 IST" duration-ms="108392">
+      <class name="vTigerOrganizationTestScripts.CreateContactWithorganizationTest">
+        <test-method is-config="true" signature="bsConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T19:59:07 IST" name="bsConfig" finished-at="2023-08-01T19:59:07 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- book -->
-      </class> <!-- vTiger.Practice.YatraTckBook -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- bsConfig -->
+        <test-method is-config="true" signature="bcConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T19:59:07 IST" name="bcConfig" finished-at="2023-08-01T19:59:26 IST" duration-ms="18911" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bcConfig -->
+        <test-method is-config="true" signature="bmConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T19:59:26 IST" name="bmConfig" finished-at="2023-08-01T19:59:32 IST" duration-ms="5590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bmConfig -->
+        <test-method signature="createContactWithOrgTest()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T19:59:32 IST" name="createContactWithOrgTest" finished-at="2023-08-01T20:00:51 IST" duration-ms="79541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createContactWithOrgTest -->
+        <test-method is-config="true" signature="amConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T20:00:51 IST" name="amConfig" finished-at="2023-08-01T20:00:55 IST" duration-ms="4283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- amConfig -->
+        <test-method is-config="true" signature="asConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T20:00:55 IST" name="asConfig" finished-at="2023-08-01T20:00:58 IST" duration-ms="2414" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- asConfig -->
+      </class> <!-- vTigerOrganizationTestScripts.CreateContactWithorganizationTest -->
+    </test> <!-- Test-Runner-Firefox -->
+    <test started-at="2023-08-01T19:59:07 IST" name="Test-Runner-Chrome" finished-at="2023-08-01T20:00:55 IST" duration-ms="108393">
+      <class name="vTigerOrganizationTestScripts.CreateContactWithorganizationTest">
+        <test-method is-config="true" signature="bcConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@66f57048]" started-at="2023-08-01T19:59:07 IST" name="bcConfig" finished-at="2023-08-01T19:59:26 IST" duration-ms="18877" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bcConfig -->
+        <test-method is-config="true" signature="bmConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@66f57048]" started-at="2023-08-01T19:59:26 IST" name="bmConfig" finished-at="2023-08-01T19:59:32 IST" duration-ms="5619" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bmConfig -->
+        <test-method signature="createContactWithOrgTest()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@66f57048]" started-at="2023-08-01T19:59:32 IST" name="createContactWithOrgTest" finished-at="2023-08-01T20:00:51 IST" duration-ms="79677" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createContactWithOrgTest -->
+        <test-method is-config="true" signature="amConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@66f57048]" started-at="2023-08-01T20:00:51 IST" name="amConfig" finished-at="2023-08-01T20:00:55 IST" duration-ms="4148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- amConfig -->
+      </class> <!-- vTigerOrganizationTestScripts.CreateContactWithorganizationTest -->
+    </test> <!-- Test-Runner-Chrome -->
+  </suite> <!-- Suite -->
 </testng-results>

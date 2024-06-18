@@ -17,7 +17,7 @@
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
-	    <version>4.8.3</version> 
+	    <version>4.10.0</version> 
 	</dependency>
 
 		<!-- for handling excel spread sheets we need apache poi dependency. its a third party tool to handle the excel sheet-->
@@ -78,8 +78,7 @@
 	</dependency>
 	
 	
-		<!-- This is for Extent Reports-->
-		
+		<!-- This is for Extent Reports-->		
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 	<dependency>
 	    <groupId>com.aventstack</groupId>
@@ -96,37 +95,37 @@
  
   <profiles>
   
-	  	<profile>
-	  		<id>crossbrowsing</id>
+		<profile>
+			<id>crossbrowsing</id>
 	  		<build>
 	  			<plugins>
 	  				<plugin>
-	       	 <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-surefire-plugin</artifactId>
-	        <version>3.0.0-M8</version>
-	        <configuration>
-	        <suiteXmlFiles>
-	        <suiteXmlFile>testng_CrossBrowser_Excecution.xml</suiteXmlFile>
-	        </suiteXmlFiles>
-	        </configuration>
+				       	<groupId>org.apache.maven.plugins</groupId>
+				        <artifactId>maven-surefire-plugin</artifactId>
+				        <version>3.0.0-M8</version>
+				        <configuration>
+				        <suiteXmlFiles>
+				        <suiteXmlFile>testng_CrossBrowser_Excecution.xml</suiteXmlFile>
+				        </suiteXmlFiles>
+				        </configuration>
 	     			</plugin>
 	  			</plugins>  		
 	  		</build>  	
-	  	</profile>
+		</profile>
 	  	
 	  	<profile>
 	  		<id>BatchExecution</id>
 	  		<build>
 	  			<plugins>
 	  				<plugin>
-	       	 <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-surefire-plugin</artifactId>
-	        <version>3.0.0-M8</version>
-	        <configuration>
-	        <suiteXmlFiles>
-	        <suiteXmlFile>testng_BatchExecution3.xml</suiteXmlFile>
-	        </suiteXmlFiles>
-	        </configuration>
+				       	<groupId>org.apache.maven.plugins</groupId>
+				        <artifactId>maven-surefire-plugin</artifactId>
+				        <version>3.0.0-M8</version>
+				        <configuration>
+				        <suiteXmlFiles>
+				        <suiteXmlFile>testng_BatchExecution3.xml</suiteXmlFile>
+				        </suiteXmlFiles>
+				        </configuration>
 	     			</plugin>
 	  			</plugins>  		
 	  		</build>  	
@@ -137,14 +136,14 @@
 				<build>
 					<plugins>
 						<plugin>	
-			<groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-surefire-plugin</artifactId>
-	        <version>3.0.0-M8</version>
-	        <configuration>
-	        <suiteXmlFiles>
-	        <suiteXmlFile>Smoke.xml</suiteXmlFile>
-	        </suiteXmlFiles>
-	        </configuration>	
+							<groupId>org.apache.maven.plugins</groupId>
+					        <artifactId>maven-surefire-plugin</artifactId>
+					        <version>3.0.0-M8</version>
+					        <configuration>
+					        <suiteXmlFiles>
+					        <suiteXmlFile>Smoke.xml</suiteXmlFile>
+					        </suiteXmlFiles>
+					        </configuration>	
 						</plugin>
 					</plugins>
 				</build>  	

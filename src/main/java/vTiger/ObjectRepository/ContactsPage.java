@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ContactsPage 
 {
-	// declaration
+//		declaration
 		@FindBy(xpath = "//img[@title='Create Contact...']")
 		private WebElement CreateContactLookUpImg;
 		

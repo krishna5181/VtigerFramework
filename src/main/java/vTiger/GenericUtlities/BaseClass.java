@@ -38,7 +38,7 @@ public class BaseClass
 		System.out.println("====== DataBase Connection successfull =====");
 	}
 	
-//	@Parameters("browser")  //for CrossBrowser execution, and comment the readDataFromProperty bcz we are reading the property from property file 
+//	@Parameters("browser")  //for CrossBrowser execution, and comment the readDataFromProperty bcz we are not reading the property from property file 
 	@BeforeClass(groups = {"SmokeSuite","RegressionSuite"})
 	public void bcConfig(/*String Browser*/) throws IOException
 	{

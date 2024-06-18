@@ -32,7 +32,7 @@ public class ListenersImplementationClass implements ITestListener {
 		htmlReport.config().setTheme(Theme.DARK);
 		
 		
-		//Actual Report for system info in Extent Rports
+		//Actual Report for system info in Extent Reports
 		reports = new ExtentReports();
 		reports.attachReporter(htmlReport);
 		reports.setSystemInfo("Base Url","http://localhost:8888");

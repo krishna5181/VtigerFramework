@@ -1,57 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-01T19:59:07 IST" name="Suite" finished-at="2023-08-01T20:00:55 IST" duration-ms="108393">
+  <suite started-at="2024-04-23T16:25:18 IST" name="Default suite" finished-at="2024-04-23T16:25:45 IST" duration-ms="26835">
     <groups>
     </groups>
-    <test started-at="2023-08-01T19:59:07 IST" name="Test-Runner-Firefox" finished-at="2023-08-01T20:00:55 IST" duration-ms="108392">
-      <class name="vTigerOrganizationTestScripts.CreateContactWithorganizationTest">
-        <test-method is-config="true" signature="bsConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T19:59:07 IST" name="bsConfig" finished-at="2023-08-01T19:59:07 IST" duration-ms="8" status="PASS">
+    <test started-at="2024-04-23T16:25:18 IST" name="Default test" finished-at="2024-04-23T16:25:45 IST" duration-ms="26835">
+      <class name="vTiger.Practice.ImplicitWait">
+        <test-method signature="t1()[pri:0, instance:vTiger.Practice.ImplicitWait@239a307b]" started-at="2024-04-23T16:25:18 IST" name="t1" finished-at="2024-04-23T16:25:45 IST" duration-ms="26776" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bsConfig -->
-        <test-method is-config="true" signature="bcConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T19:59:07 IST" name="bcConfig" finished-at="2023-08-01T19:59:26 IST" duration-ms="18911" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bcConfig -->
-        <test-method is-config="true" signature="bmConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T19:59:26 IST" name="bmConfig" finished-at="2023-08-01T19:59:32 IST" duration-ms="5590" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bmConfig -->
-        <test-method signature="createContactWithOrgTest()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T19:59:32 IST" name="createContactWithOrgTest" finished-at="2023-08-01T20:00:51 IST" duration-ms="79541" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createContactWithOrgTest -->
-        <test-method is-config="true" signature="amConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T20:00:51 IST" name="amConfig" finished-at="2023-08-01T20:00:55 IST" duration-ms="4283" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- amConfig -->
-        <test-method is-config="true" signature="asConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@5e600dd5]" started-at="2023-08-01T20:00:55 IST" name="asConfig" finished-at="2023-08-01T20:00:58 IST" duration-ms="2414" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- asConfig -->
-      </class> <!-- vTigerOrganizationTestScripts.CreateContactWithorganizationTest -->
-    </test> <!-- Test-Runner-Firefox -->
-    <test started-at="2023-08-01T19:59:07 IST" name="Test-Runner-Chrome" finished-at="2023-08-01T20:00:55 IST" duration-ms="108393">
-      <class name="vTigerOrganizationTestScripts.CreateContactWithorganizationTest">
-        <test-method is-config="true" signature="bcConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@66f57048]" started-at="2023-08-01T19:59:07 IST" name="bcConfig" finished-at="2023-08-01T19:59:26 IST" duration-ms="18877" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bcConfig -->
-        <test-method is-config="true" signature="bmConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@66f57048]" started-at="2023-08-01T19:59:26 IST" name="bmConfig" finished-at="2023-08-01T19:59:32 IST" duration-ms="5619" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bmConfig -->
-        <test-method signature="createContactWithOrgTest()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@66f57048]" started-at="2023-08-01T19:59:32 IST" name="createContactWithOrgTest" finished-at="2023-08-01T20:00:51 IST" duration-ms="79677" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createContactWithOrgTest -->
-        <test-method is-config="true" signature="amConfig()[pri:0, instance:vTigerOrganizationTestScripts.CreateContactWithorganizationTest@66f57048]" started-at="2023-08-01T20:00:51 IST" name="amConfig" finished-at="2023-08-01T20:00:55 IST" duration-ms="4148" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- amConfig -->
-      </class> <!-- vTigerOrganizationTestScripts.CreateContactWithorganizationTest -->
-    </test> <!-- Test-Runner-Chrome -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- t1 -->
+      </class> <!-- vTiger.Practice.ImplicitWait -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

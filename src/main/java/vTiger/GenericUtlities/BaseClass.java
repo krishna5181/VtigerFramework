@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -86,6 +87,13 @@ public class BaseClass
 		HomePage hp = new HomePage(driver);
 		hp.logOutOfApp(driver);
 		System.out.println("Logout successful");
+	}
+	
+	@AfterClass
+	public void acConfig()
+	{
+		driver.quit();
+		System.out.println("==== browswer Closed =====");
 	}
 	
 	@AfterSuite (groups = {"SmokeSuite","RegressionSuite"})

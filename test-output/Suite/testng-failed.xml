@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Test_PE2(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testScriptsPractice.TestScript1Test">
+      <class name="vTigerOrganizationTestScripts.CreateMultipleOrganizations">
+        <methods>
+          <include name="createMultipleOrgTest" invocation-numbers="4"/>
+        </methods>
+      </class> <!-- vTigerOrganizationTestScripts.CreateMultipleOrganizations -->
+      <class name="vTigerOrganizationTestScripts.CreateContactWithorganizationTest">
         <methods>
           <include name="asConfig"/>
           <include name="amConfig"/>
           <include name="bsConfig"/>
-          <include name="bmConfig"/>
           <include name="bcConfig"/>
-          <include name="Suite3"/>
-          <include name="Suite2"/>
+          <include name="createContactWithOrgTest"/>
+          <include name="bmConfig"/>
         </methods>
-      </class> <!-- testScriptsPractice.TestScript1Test -->
+      </class> <!-- vTigerOrganizationTestScripts.CreateContactWithorganizationTest -->
     </classes>
-  </test> <!-- Test_PE2(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

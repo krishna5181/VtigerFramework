@@ -4,7 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
        <class name="vTigerOrganizationTestScripts.CreateContactWithorganizationTest"/>
-      <class name="vTigerOrganizationTestScripts.CreateMultipleOrganizations"></class>
+       <class name="vTigerOrganizationTestScripts.CreateMultipleOrganizations"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
